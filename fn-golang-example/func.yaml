@@ -1,0 +1,24 @@
+name: fn-golang-example
+namespace: ""
+runtime: go
+registry: ""
+image: docker.io/gabo1208/fn-golang-example:latest
+imageDigest: sha256:c71cb3272f85ac1881421a9abd38c98028995b974733e5d59ffa516ee8353eba
+builder: gcr.io/paketo-buildpacks/builder:base
+builders:
+  base: gcr.io/paketo-buildpacks/builder:base
+  default: gcr.io/paketo-buildpacks/builder:base
+  full: gcr.io/paketo-buildpacks/builder:full
+buildpacks:
+- paketo-buildpacks/go-dist
+- ghcr.io/boson-project/go-function-buildpack:tip
+volumes: []
+buildEnvs: []
+envs: []
+annotations: {}
+options: {}
+labels: []
+healthEndpoints:
+  liveness: /health/liveness
+  readiness: /health/readiness
+created: 2021-11-22T11:47:45.2552678-05:00
