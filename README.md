@@ -37,7 +37,14 @@ long-running-00001   long-running                    1            10s   4 OK / 4
 kn service update long-running --tag long-running-00001=first --tag @latest=second
 ```
 
-Now is a good time to inspect the fn-golang-example, after all that is the code we are going to be using for this example.
+ Now is a good time to inspect the fn-golang-example, after all that is the code we are going to be using for this example.
+ 
+ This directory structure was created by running:
+```
+func create -l go -t cloudevents fn-golang-example
+```
+
+ Then we just modify the Handle Functions to do whatever we need.
  The Handle function is the one that have the magic. In summary: we are using a [CloudEvent](https://cloudevents.io/) based handler, that call any of our two `long-running ksvc` revisions depending on the "service_url" field in the CloudEvent data body. This "service_url" contains the url for the specific Tag we want to call.
   Then the function returns the response (nothing too fancy but you get the point on things you can do with Knative Func in minutes).
 ```

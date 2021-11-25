@@ -10,7 +10,7 @@ import (
 	cloudevents "github.com/cloudevents/sdk-go/v2"
 )
 
-// Handle an HTTP Request.
+// Handle an HTTP Request, this is just as a func http function template example.
 /* func Handle(ctx context.Context, res http.ResponseWriter, req *http.Request) {
 	res.Header().Add("Content-Type", "text/plain")
 
@@ -20,6 +20,20 @@ import (
 	}
 } */
 
+// Handle a CloudEvent.
+// Supported Function signatures:
+// * func()
+// * func() error
+// * func(context.Context)
+// * func(context.Context) error
+// * func(event.Event)
+// * func(event.Event) error
+// * func(context.Context, event.Event)
+// * func(context.Context, event.Event) error
+// * func(event.Event) *event.Event
+// * func(event.Event) (*event.Event, error)
+// * func(context.Context, event.Event) *event.Event
+// * func(context.Context, event.Event) (*event.Event, error)
 type EventOrchestrator struct {
 	SvcUrl string `json:"service_url"`
 }
