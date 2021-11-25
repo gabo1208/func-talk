@@ -1,4 +1,4 @@
-# Kn Func Talk
+# Knative Func Talk
 A brief example on Knative Func using Golang CloudEvents Func Templates
 
 ## Configuring the Env
