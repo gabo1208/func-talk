@@ -48,8 +48,8 @@ func Handle(ctx context.Context, event cloudevents.Event) (resp *cloudevents.Eve
 	// this is needed for creating a valid CloudEvent
 	response := cloudevents.NewEvent()
 	response.SetID("example-uuid-32943bac6fea")
-	response.SetSource("purchase/getter")
-	response.SetType("purchase")
+	response.SetSource("EventOrchestrator/Proxy")
+	response.SetType("EventOrchestrator")
 
 	svcResp, err := http.Get(evOrch.SvcUrl)
 	if err != nil {
