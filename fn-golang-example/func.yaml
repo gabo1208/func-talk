@@ -3,7 +3,7 @@ namespace: ""
 runtime: go
 registry: ""
 image: docker.io/gabo1208/fn-golang-example:latest
-imageDigest: sha256:c71cb3272f85ac1881421a9abd38c98028995b974733e5d59ffa516ee8353eba
+imageDigest: sha256:faf42ca0cb0a42e26e6d14537bf828a50a2c8d8601818fe6595448bc6cc7d5a2
 builder: gcr.io/paketo-buildpacks/builder:base
 builders:
   base: gcr.io/paketo-buildpacks/builder:base
